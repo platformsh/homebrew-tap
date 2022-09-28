@@ -5,12 +5,12 @@
 class PlatformshCli < Formula
   desc "Platform.sh CLI."
   homepage "https://docs.platform.sh/administration/cli.html"
-  version "4.0.0-beta.1"
+  version "4.0.0-beta.2"
   license "MIT"
 
   on_macos do
-    url "https://github.com/platformsh/homebrew-tap/releases/download/4.0.0-beta.1/platform_4.0.0-beta.1_darwin_all.tar.gz"
-    sha256 "e42d44251b0456e4da9f95218425a183a39797469b6cbd2d485e7f1936c5cba0"
+    url "https://github.com/platformsh/homebrew-tap/releases/download/4.0.0-beta.2/platform_4.0.0-beta.2_darwin_all.tar.gz"
+    sha256 "92ac488ab3af5437c9207fbe0f1cb88404fffbd6bbb8d87dd12e4dd5623cbbe6"
 
     def install
       bin.install "platform"
@@ -19,8 +19,8 @@ class PlatformshCli < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/platformsh/homebrew-tap/releases/download/4.0.0-beta.1/platform_4.0.0-beta.1_linux_amd64.tar.gz"
-      sha256 "e59fc837918731c77b05fb8946a5e05a2ea9f494f219a6213299d58a3232f876"
+      url "https://github.com/platformsh/homebrew-tap/releases/download/4.0.0-beta.2/platform_4.0.0-beta.2_linux_amd64.tar.gz"
+      sha256 "99e56fd8eef50db8433dc588375815a7cdd4d407ceac22ae18c0955811cb6e16"
 
       def install
         bin.install "platform"
