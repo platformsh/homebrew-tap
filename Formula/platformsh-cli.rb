@@ -5,7 +5,7 @@
 class PlatformshCli < Formula
   desc "Platform.sh CLI"
   homepage "https://docs.platform.sh/administration/cli.html"
-  version "4.0.0-beta.3"
+  version "4.0.0-beta.4"
   license "MIT"
 
   depends_on "git" => :optional
@@ -13,31 +13,49 @@ class PlatformshCli < Formula
   depends_on "openssl@1.1"
 
   on_macos do
-    url "https://github.com/platformsh/homebrew-tap/releases/download/4.0.0-beta.3/platform_4.0.0-beta.3_darwin_all.tar.gz"
-    sha256 "0d34414a5ad162825ff698e980cc5e6af05493f9d06f5cb87a7acb24d8f0809c"
+    url "https://github.com/platformsh/homebrew-tap/releases/download/4.0.0-beta.4/platform_4.0.0-beta.4_darwin_all.tar.gz"
+    sha256 "28c64c5a167a9d308c65f990f7f453cf4007c8f93adc1b78144c96e2bc172e88"
 
     def install
       bin.install "platform"
+      bash_completion.install "completion/bash/platform.bash" => "platform"
+      zsh_completion.install "completion/zsh/_platform" => "_platform"
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/platformsh/homebrew-tap/releases/download/4.0.0-beta.3/platform_4.0.0-beta.3_linux_amd64.tar.gz"
-      sha256 "c50f0b9d117bf45a7b532271dfcdf906b2c4f64719b69c4ad28ade7381233080"
-
-      def install
-        bin.install "platform"
-      end
-    end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/platformsh/homebrew-tap/releases/download/4.0.0-beta.3/platform_4.0.0-beta.3_linux_arm64.tar.gz"
-      sha256 "294d2935dc0489f7710528f7a79db9962ee21767a0d480b8b512bdb0d9e15770"
+      url "https://github.com/platformsh/homebrew-tap/releases/download/4.0.0-beta.4/platform_4.0.0-beta.4_linux_arm64.tar.gz"
+      sha256 "21202d98059d92156574e9feb15132098b8a59804951163efa074e708cf47cd3"
 
       def install
         bin.install "platform"
+        bash_completion.install "completion/bash/platform.bash" => "platform"
+        zsh_completion.install "completion/zsh/_platform" => "_platform"
       end
     end
+    if Hardware::CPU.intel?
+      url "https://github.com/platformsh/homebrew-tap/releases/download/4.0.0-beta.4/platform_4.0.0-beta.4_linux_amd64.tar.gz"
+      sha256 "79df5f222addbaa187f6291ef02a16728b8684e7fcdeafd116c4e6225a545fa4"
+
+      def install
+        bin.install "platform"
+        bash_completion.install "completion/bash/platform.bash" => "platform"
+        zsh_completion.install "completion/zsh/_platform" => "_platform"
+      end
+    end
+  end
+
+  def caveats
+    <<~EOS
+      In order to enable completions, you need to follow one of the following steps:
+
+        * Install using Homebrew and include bash-completion or zsh-completion package, depending on your shell of choice
+        * Run the following command to enable completion for bash
+          `echo 'echo 'eval $(platform completion bash)' >> ~/.bashrc'
+        * Run the following command to enable completion for zsh
+          `echo 'echo 'eval $(platform completion zsh)' >> ~/.zshrc'
+    EOS
   end
 
   test do
