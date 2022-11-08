@@ -14,7 +14,7 @@ class PlatformshCli < Formula
 
   on_macos do
     url "https://github.com/platformsh/homebrew-tap/releases/download/4.0.0-beta.6/platform_4.0.0-beta.6_darwin_all.tar.gz"
-    sha256 "131a8b5d3fa53aa2783e5c93a863c55133ffabeb7da3817a5ece6d0d79bdecaf"
+    sha256 "88f73e787e2d6055355bebe1a649cfe1b56684c346287da8686a17643ee442cf"
 
     def install
       bin.install "platform"
@@ -26,7 +26,7 @@ class PlatformshCli < Formula
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/platformsh/homebrew-tap/releases/download/4.0.0-beta.6/platform_4.0.0-beta.6_linux_arm64.tar.gz"
-      sha256 "108fd1f6237d028067096f04598c51e96d7de1f85d4723c685af390e88072a58"
+      sha256 "25c2ca5a808377bcf40fad4a2c358a93929ffc938f8e5e61b838ecea0e0e6dbf"
 
       def install
         bin.install "platform"
@@ -36,7 +36,7 @@ class PlatformshCli < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/platformsh/homebrew-tap/releases/download/4.0.0-beta.6/platform_4.0.0-beta.6_linux_amd64.tar.gz"
-      sha256 "00f1c44a436abda378d93e57ab8cd4e932c28c4d235aadf87be5f303d338a7f0"
+      sha256 "e77c2df03ce434dc2a12f976ccf16033cdfe288df9a278689e7b53e87e297411"
 
       def install
         bin.install "platform"
