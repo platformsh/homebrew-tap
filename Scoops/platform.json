@@ -1,0 +1,15 @@
+{
+    "version": "4.0.0-beta.6",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/platformsh/homebrew-tap/releases/download/4.0.0-beta.6/platform_4.0.0-beta.6_windows_amd64.zip",
+            "bin": [
+                "platform.exe"
+            ],
+            "hash": "754fc76e45340591eb339d9fd613a6124c66cca2f1f595cdd4ccc164bdcce14b"
+        }
+    },
+    "homepage": "https://docs.platform.sh/administration/cli.html",
+    "license": "MIT",
+    "description": "Platform.sh CLI"
+}
