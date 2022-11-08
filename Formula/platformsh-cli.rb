@@ -5,7 +5,7 @@
 class PlatformshCli < Formula
   desc "Platform.sh CLI"
   homepage "https://docs.platform.sh/administration/cli.html"
-  version "4.0.0-beta.5"
+  version "4.0.0-beta.6"
   license "MIT"
 
   depends_on "git" => :optional
@@ -13,8 +13,8 @@ class PlatformshCli < Formula
   depends_on "openssl@1.1"
 
   on_macos do
-    url "https://github.com/platformsh/homebrew-tap/releases/download/4.0.0-beta.5/platform_4.0.0-beta.5_darwin_all.tar.gz"
-    sha256 "e7bac9612db75064e77d8a2fc8bced208ebf9bc2479c12857d0ea4d56cf4cb5b"
+    url "https://github.com/platformsh/homebrew-tap/releases/download/4.0.0-beta.6/platform_4.0.0-beta.6_darwin_all.tar.gz"
+    sha256 "131a8b5d3fa53aa2783e5c93a863c55133ffabeb7da3817a5ece6d0d79bdecaf"
 
     def install
       bin.install "platform"
@@ -25,8 +25,8 @@ class PlatformshCli < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/platformsh/homebrew-tap/releases/download/4.0.0-beta.5/platform_4.0.0-beta.5_linux_arm64.tar.gz"
-      sha256 "6fad830864ae772bce380ae72f14bed8a88e449caf5f699e0492a277bb14e7f1"
+      url "https://github.com/platformsh/homebrew-tap/releases/download/4.0.0-beta.6/platform_4.0.0-beta.6_linux_arm64.tar.gz"
+      sha256 "108fd1f6237d028067096f04598c51e96d7de1f85d4723c685af390e88072a58"
 
       def install
         bin.install "platform"
@@ -35,8 +35,8 @@ class PlatformshCli < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/platformsh/homebrew-tap/releases/download/4.0.0-beta.5/platform_4.0.0-beta.5_linux_amd64.tar.gz"
-      sha256 "1e96c71a065d760e292a52099821b1b8054aa7193909fcb27412cf8e46828751"
+      url "https://github.com/platformsh/homebrew-tap/releases/download/4.0.0-beta.6/platform_4.0.0-beta.6_linux_amd64.tar.gz"
+      sha256 "00f1c44a436abda378d93e57ab8cd4e932c28c4d235aadf87be5f303d338a7f0"
 
       def install
         bin.install "platform"
@@ -52,9 +52,9 @@ class PlatformshCli < Formula
 
         * Install using Homebrew and include bash-completion or zsh-completion package, depending on your shell of choice
         * Run the following command to enable completion for bash
-          `echo 'echo 'eval $(platform completion bash)' >> ~/.bashrc'
+          echo 'eval $(platform completion bash)' >> ~/.bashrc
         * Run the following command to enable completion for zsh
-          `echo 'echo 'eval $(platform completion zsh)' >> ~/.zshrc'
+          echo 'eval $(platform completion zsh)' >> ~/.zshrc
     EOS
   end
 
