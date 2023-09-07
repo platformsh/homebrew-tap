@@ -1,12 +1,12 @@
 {
-    "version": "4.8.6",
+    "version": "4.9.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/platformsh/cli/releases/download/4.8.6/platform_4.8.6_windows_amd64.zip",
+            "url": "https://github.com/platformsh/cli/releases/download/4.9.0/platform_4.9.0_windows_amd64.zip",
             "bin": [
                 "platform.exe"
             ],
-            "hash": "25e7795b64b44b9b5ccbce4a574d6e2bc2b2a00c827d4b2e880ea2a448e33586"
+            "hash": "c19bb2ebb689ab8b100fb8f38e6ad67f26a1cb0e5849afa203f9cfebdf46e2ad"
         }
     },
     "homepage": "https://docs.platform.sh/administration/cli.html",
