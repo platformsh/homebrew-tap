@@ -5,14 +5,14 @@
 class PlatformshCli < Formula
   desc "Platform.sh CLI"
   homepage "https://docs.platform.sh/administration/cli.html"
-  version "4.10.2"
+  version "4.10.3"
   license "MIT"
 
   depends_on "git" => :optional
 
   on_macos do
-    url "https://github.com/platformsh/cli/releases/download/4.10.2/platform_4.10.2_darwin_all.tar.gz"
-    sha256 "a71f2632f39a641654c7f9aca2ad50c4b575f1d278470a6383a0b929f9c47b0b"
+    url "https://github.com/platformsh/cli/releases/download/4.10.3/platform_4.10.3_darwin_all.tar.gz"
+    sha256 "1930f9a278a97fb70994d6de4795e9752c9ebedcd8717178d43a36ffb6b09bc2"
 
     def install
       bin.install "platform"
@@ -22,8 +22,8 @@ class PlatformshCli < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/platformsh/cli/releases/download/4.10.2/platform_4.10.2_linux_arm64.tar.gz"
-      sha256 "f047f08d34a1f831294c9e4b139ccf8123f7b8f2ed7a05680e826d0eafdf6189"
+      url "https://github.com/platformsh/cli/releases/download/4.10.3/platform_4.10.3_linux_arm64.tar.gz"
+      sha256 "f0251180bab1d3bd5c210a3ae096bf3b3c0804d8af124e0fdd81176253c3da61"
 
       def install
         bin.install "platform"
@@ -31,8 +31,8 @@ class PlatformshCli < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/platformsh/cli/releases/download/4.10.2/platform_4.10.2_linux_amd64.tar.gz"
-      sha256 "6dd3fc100544317c6fda1938023d9a4d8a791d23771bff6744ca0b60a142ce29"
+      url "https://github.com/platformsh/cli/releases/download/4.10.3/platform_4.10.3_linux_amd64.tar.gz"
+      sha256 "b71440371a3f8c9ed01edf52078bb9818c9bf9f22e30110b5ff89fb0cb0d8251"
 
       def install
         bin.install "platform"
