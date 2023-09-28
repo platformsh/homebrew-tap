@@ -12,7 +12,7 @@ class PlatformshCli < Formula
 
   on_macos do
     url "https://github.com/platformsh/cli/releases/download/4.10.3/platform_4.10.3_darwin_all.tar.gz"
-    sha256 "1930f9a278a97fb70994d6de4795e9752c9ebedcd8717178d43a36ffb6b09bc2"
+    sha256 "31585830cec4fc6630aef5d39e2ddd02745903dd6be75a829b689c6e7f0a82ca"
 
     def install
       bin.install "platform"
