@@ -5,14 +5,14 @@
 class UpsunCli < Formula
   desc "Upsun CLI"
   homepage "https://docs.deployfriday.net/administration/cli.html"
-  version "5.0.12"
+  version "5.0.13"
   license "MIT"
 
   depends_on "git" => :optional
 
   on_macos do
-    url "https://github.com/platformsh/cli/releases/download/5.0.12/upsun_5.0.12_darwin_all.tar.gz"
-    sha256 "4704cc270be4b97fe89074b2c73a6f683eae0fc7e17956ebedb8010b678c40ea"
+    url "https://github.com/platformsh/cli/releases/download/5.0.13/upsun_5.0.13_darwin_all.tar.gz"
+    sha256 "e49297b40527aab96e7f2344d39b998c40df26fe79edab983eb893c6f51b3092"
 
     def install
       bin.install "upsun"
@@ -22,8 +22,8 @@ class UpsunCli < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/platformsh/cli/releases/download/5.0.12/upsun_5.0.12_linux_arm64.tar.gz"
-      sha256 "66b692fcfa923cbfe4723e68ea1cc374bef4215d885973a66ba3870a25c80d07"
+      url "https://github.com/platformsh/cli/releases/download/5.0.13/upsun_5.0.13_linux_arm64.tar.gz"
+      sha256 "30d950930b20e52b88409043cbbc95b5c75ad6876969465ecc282b6ade8e5b64"
 
       def install
         bin.install "upsun"
@@ -31,8 +31,8 @@ class UpsunCli < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/platformsh/cli/releases/download/5.0.12/upsun_5.0.12_linux_amd64.tar.gz"
-      sha256 "b2f10f31563bafba40a17c0520c62a08476ea91dcd92871a82e7f69c81adf86f"
+      url "https://github.com/platformsh/cli/releases/download/5.0.13/upsun_5.0.13_linux_amd64.tar.gz"
+      sha256 "7e354bfec6ced7099a278a99a54315ff84382737f4a7aab1d04951758e445095"
 
       def install
         bin.install "upsun"
