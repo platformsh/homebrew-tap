@@ -5,14 +5,14 @@
 class UpsunCli < Formula
   desc "Upsun CLI"
   homepage "https://docs.deployfriday.net/administration/cli.html"
-  version "5.0.14"
+  version "5.0.15"
   license "MIT"
 
   depends_on "git" => :optional
 
   on_macos do
-    url "https://github.com/platformsh/cli/releases/download/5.0.14/upsun_5.0.14_darwin_all.tar.gz"
-    sha256 "1ff70bb7149c15bcecc62b56257962f02368f6154c99592c4318f42c0a66f12e"
+    url "https://github.com/platformsh/cli/releases/download/5.0.15/upsun_5.0.15_darwin_all.tar.gz"
+    sha256 "94d96d7e2f80d8689d4dd3008beb48a4a9d46e6669d436def8348aaad2315cc9"
 
     def install
       bin.install "upsun"
@@ -21,22 +21,26 @@ class UpsunCli < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/platformsh/cli/releases/download/5.0.14/upsun_5.0.14_linux_arm64.tar.gz"
-      sha256 "d6810f1b591682f6a49bb8cb927db00ac436ca262188074cc56054dfdac20f76"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/platformsh/cli/releases/download/5.0.15/upsun_5.0.15_linux_amd64.tar.gz"
+        sha256 "e0f62c74f4782d5bc8bde6da4eba251276bbce926c56976c040f266005904547"
 
-      def install
-        bin.install "upsun"
-        generate_completions_from_executable(bin/"upsun", "completion", shells: [:bash, :zsh])
+        def install
+          bin.install "upsun"
+          generate_completions_from_executable(bin/"upsun", "completion", shells: [:bash, :zsh])
+        end
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/platformsh/cli/releases/download/5.0.14/upsun_5.0.14_linux_amd64.tar.gz"
-      sha256 "b3887cececf6774630adec3445181612e0da78f5f62d23f3fdbc097a868e97da"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/platformsh/cli/releases/download/5.0.15/upsun_5.0.15_linux_arm64.tar.gz"
+        sha256 "41189b8999baf3c03effb9677972f2c419a3726ff05b96daf9b246790b41e8fa"
 
-      def install
-        bin.install "upsun"
-        generate_completions_from_executable(bin/"upsun", "completion", shells: [:bash, :zsh])
+        def install
+          bin.install "upsun"
+          generate_completions_from_executable(bin/"upsun", "completion", shells: [:bash, :zsh])
+        end
       end
     end
   end
