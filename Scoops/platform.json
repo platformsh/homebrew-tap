@@ -1,12 +1,12 @@
 {
-    "version": "5.0.19",
+    "version": "5.0.20",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/platformsh/cli/releases/download/5.0.19/platform_5.0.19_windows_amd64.zip",
+            "url": "https://github.com/platformsh/cli/releases/download/5.0.20/platform_5.0.20_windows_amd64.zip",
             "bin": [
                 "platform.exe"
             ],
-            "hash": "58fd72ce3aa129bdfceae1fb02bc9b3c15130fb1cca97ca4cbb92c386fbb04ab"
+            "hash": "59d5b1ed17688d568491a0279c1fc106c4f3cc15b2231c192e986aee61b6287f"
         }
     },
     "homepage": "https://docs.platform.sh/administration/cli.html",
