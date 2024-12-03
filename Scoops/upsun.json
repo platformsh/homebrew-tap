@@ -1,12 +1,12 @@
 {
-    "version": "5.0.22",
+    "version": "5.0.23",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/platformsh/cli/releases/download/5.0.22/upsun_5.0.22_windows_amd64.zip",
+            "url": "https://github.com/platformsh/cli/releases/download/5.0.23/upsun_5.0.23_windows_amd64.zip",
             "bin": [
                 "upsun.exe"
             ],
-            "hash": "03d8098b9de187de8a196d6e32e082fd4677010d6430954dde2c2020922f0ced"
+            "hash": "e94d73cced51eafa0bdb3c5b87bd29da306895b275bd4b5950c2e87e53e4fbfc"
         }
     },
     "homepage": "https://docs.deployfriday.net/administration/cli.html",
