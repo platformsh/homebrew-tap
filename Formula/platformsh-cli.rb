@@ -5,14 +5,14 @@
 class PlatformshCli < Formula
   desc "Platform.sh CLI"
   homepage "https://docs.upsun.com/anchors/fixed/cli/"
-  version "5.3.0"
+  version "5.4.0"
   license "MIT"
 
   depends_on "git" => :optional
 
   on_macos do
-    url "https://github.com/platformsh/cli/releases/download/5.3.0/platform_5.3.0_darwin_all.tar.gz"
-    sha256 "f67b531cf0b9f2aabd69ab1b5c7a9c7e82b95fb7690d6a06850110a4a988706c"
+    url "https://github.com/platformsh/cli/releases/download/5.4.0/platform_5.4.0_darwin_all.tar.gz"
+    sha256 "58cb0023d1ed7d3da230b7628d7df02e559cc1530eaa3b1b40dcc4efbc0d9595"
 
     def install
       bin.install "platform"
@@ -21,26 +21,20 @@ class PlatformshCli < Formula
   end
 
   on_linux do
-    on_intel do
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/platformsh/cli/releases/download/5.3.0/platform_5.3.0_linux_amd64.tar.gz"
-        sha256 "a6e43e5a9ce67eab3d84cf940c0ba27118db34e0db1836cc1a25cf7b886b2b35"
-
-        def install
-          bin.install "platform"
-          generate_completions_from_executable(bin/"platform", "completion", shells: [:bash, :zsh])
-        end
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+      url "https://github.com/platformsh/cli/releases/download/5.4.0/platform_5.4.0_linux_amd64.tar.gz"
+      sha256 "1403865e08cf8ee6605bd4922a850797b494fd34d921e14e557c504a82687a5e"
+      def install
+        bin.install "platform"
+        generate_completions_from_executable(bin/"platform", "completion", shells: [:bash, :zsh])
       end
     end
-    on_arm do
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/platformsh/cli/releases/download/5.3.0/platform_5.3.0_linux_arm64.tar.gz"
-        sha256 "579d3d803797d23a4cc162d56cda5edc73f5ee1cb5c6563b2a4e994ce4f208c2"
-
-        def install
-          bin.install "platform"
-          generate_completions_from_executable(bin/"platform", "completion", shells: [:bash, :zsh])
-        end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/platformsh/cli/releases/download/5.4.0/platform_5.4.0_linux_arm64.tar.gz"
+      sha256 "66f007384cdfc2fa29c68de96abbe155c616855e21e1709507c2aaff1e5864f1"
+      def install
+        bin.install "platform"
+        generate_completions_from_executable(bin/"platform", "completion", shells: [:bash, :zsh])
       end
     end
   end
