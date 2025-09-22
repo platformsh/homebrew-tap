@@ -5,14 +5,14 @@
 class UpsunCli < Formula
   desc "Upsun CLI"
   homepage "https://docs.upsun.com/anchors/cli/"
-  version "5.3.0"
+  version "5.4.0"
   license "MIT"
 
   depends_on "git" => :optional
 
   on_macos do
-    url "https://github.com/platformsh/cli/releases/download/5.3.0/upsun_5.3.0_darwin_all.tar.gz"
-    sha256 "47e52333c8e67adfaa7fd439259b14b3b51f5dfec85a96aa9ae9445922ac68b6"
+    url "https://github.com/platformsh/cli/releases/download/5.4.0/upsun_5.4.0_darwin_all.tar.gz"
+    sha256 "d99a0a6f250f366c9960a91f99903b000fbeb5e8c80db4c6a205ea099b0c0736"
 
     def install
       bin.install "upsun"
@@ -21,26 +21,20 @@ class UpsunCli < Formula
   end
 
   on_linux do
-    on_intel do
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/platformsh/cli/releases/download/5.3.0/upsun_5.3.0_linux_amd64.tar.gz"
-        sha256 "e7685f3f5a60664a4bbd52de94a26d10b50e52e83780ec378ee09d451312b7fc"
-
-        def install
-          bin.install "upsun"
-          generate_completions_from_executable(bin/"upsun", "completion", shells: [:bash, :zsh])
-        end
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+      url "https://github.com/platformsh/cli/releases/download/5.4.0/upsun_5.4.0_linux_amd64.tar.gz"
+      sha256 "5b45b641509e18045b52aa85696c0f75e7ae060df5cc44a24b2e988078604b42"
+      def install
+        bin.install "upsun"
+        generate_completions_from_executable(bin/"upsun", "completion", shells: [:bash, :zsh])
       end
     end
-    on_arm do
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/platformsh/cli/releases/download/5.3.0/upsun_5.3.0_linux_arm64.tar.gz"
-        sha256 "e2b1588e1ea581bb43f61df252d7091a94efcbf17e056ffbab57ef656b5173f7"
-
-        def install
-          bin.install "upsun"
-          generate_completions_from_executable(bin/"upsun", "completion", shells: [:bash, :zsh])
-        end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/platformsh/cli/releases/download/5.4.0/upsun_5.4.0_linux_arm64.tar.gz"
+      sha256 "b4f91ef414ebb24506ce11413169272eab99dde2a6410265ba159216ce2f5c61"
+      def install
+        bin.install "upsun"
+        generate_completions_from_executable(bin/"upsun", "completion", shells: [:bash, :zsh])
       end
     end
   end
