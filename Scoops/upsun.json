@@ -1,12 +1,12 @@
 {
-    "version": "5.6.0",
+    "version": "5.7.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/platformsh/cli/releases/download/5.6.0/upsun_5.6.0_windows_amd64.zip",
+            "url": "https://github.com/platformsh/cli/releases/download/5.7.0/upsun_5.7.0_windows_amd64.zip",
             "bin": [
                 "upsun.exe"
             ],
-            "hash": "b2bfb9e26b26c1ef2ac13cced440d04c4dfdf3318697cdc07fdcb17619045812"
+            "hash": "2bb90d420bd603367aca69a287a29f3c8248efa17d737c6a75b66ad326981c94"
         }
     },
     "homepage": "https://docs.upsun.com/anchors/cli/",
