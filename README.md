@@ -18,4 +18,5 @@ scoop bucket rm platformsh
 scoop bucket add upsun https://github.com/upsun/homebrew-tap.git
 ```
 
+## License
 MIT
