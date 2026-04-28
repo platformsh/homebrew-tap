@@ -1,0 +1,4 @@
+{
+    "platformsh-cli": "upsun/tap",
+    "upsun-cli": "upsun/tap"
+}
