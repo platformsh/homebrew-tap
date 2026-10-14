@@ -11,12 +11,17 @@ brew untap platformsh/tap
 brew tap upsun/tap
 ```
 
-For Scoop users:
+For Scoop users (replace `platform` with `upsun` if you installed the `upsun` app):
 
 ```bash
 scoop bucket rm platformsh
 scoop bucket add upsun https://github.com/upsun/homebrew-tap.git
+scoop uninstall platform
+scoop install upsun/platform
 ```
+
+Scoop keeps the manifest of an installed app, so `scoop update` does not move it to the new bucket: it must be
+reinstalled.
 
 ## License
 MIT
