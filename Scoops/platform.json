@@ -1,0 +1,26 @@
+{
+    "version": "5.13.0",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/upsun/cli/releases/download/v5.13.0/platform_5.13.0_windows_amd64.zip",
+            "bin": [
+                "platform.exe"
+            ],
+            "hash": "ed00754b60027418e80e632aa3a475ec45da57dc5d2165b325847681da7b07bf"
+        }
+    },
+    "homepage": "https://docs.upsun.com/anchors/fixed/cli/",
+    "license": "MIT",
+    "description": "Platform.sh CLI",
+    "depends": [
+        "extras/vcredist2022"
+    ],
+    "notes": [
+        "This bucket is no longer updated. To keep receiving updates, move to the upsun bucket",
+        "(replace \"platformsh\" with this bucket's name, the Source in \"scoop list platform\"):",
+        "  scoop bucket rm platformsh",
+        "  scoop bucket add upsun https://github.com/upsun/homebrew-tap.git",
+        "  scoop uninstall platform",
+        "  scoop install upsun/platform"
+    ]
+}
